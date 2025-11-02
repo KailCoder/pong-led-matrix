@@ -49,7 +49,7 @@
 
   <!-- Buttons -->
   <rect x="40" y="160" width="180" height="120" class="box"/>
-  <text x="130" y="190" text-anchor="middle" class="title">Buttons & Debounce</text>
+  <text x="130" y="190" text-anchor="middle" class="title">Buttons &amp; Debounce</text>
   <text x="130" y="212" text-anchor="middle" class="sub">RC + 74HC14 + synchronizer</text>
 
   <!-- Connections: Clock -> Scan counter -->
