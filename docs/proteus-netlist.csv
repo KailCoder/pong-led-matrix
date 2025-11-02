@@ -1,0 +1,92 @@
+Net,RefDes,Pin,Nota
+VCC,U1,16,74HC595 VCC
+VCC,U1,10,74HC595 MR (mantener HIGH)
+VCC,U2,16,74HC161 VCC
+VCC,U2,5,CLR (HIGH)
+VCC,U2,6,LOAD (HIGH)
+VCC,U2,7,ENP (HIGH)
+VCC,U2,9,CEP (HIGH)
+VCC,U2,10,CET (HIGH)
+VCC,U3,16,74HC138 VCC
+VCC,U3,6,G1 (enable HIGH)
+GND,U1,8,74HC595 GND
+GND,U1,13,OE (LOW habilita salidas)  ; si prefieres blanking, mueve U1.13 a net OE y añade pull-down
+GND,U2,8,74HC161 GND
+GND,U3,8,74HC138 GND
+GND,U3,4,G2A (enable LOW)
+GND,U3,5,G2B (enable LOW)
+
+SER,U1,14,DS (SERIAL IN)
+SRCLK,U1,11,SH_CP (SRCLK)
+RCLK,U1,12,ST_CP (RCLK)
+OE,JCTRL,4,Header opcional para blanking (si usas OE como net)
+SER,JCTRL,1,Header SER (opcional)
+SRCLK,JCTRL,2,Header SRCLK (opcional)
+RCLK,JCTRL,3,Header RCLK (opcional)
+
+CLK_SCAN,U2,15,CLK del 74HC161
+CLK_SCAN,CLK1,OUT,Digital Clock (~2 kHz)
+
+A,U2,14,QA
+A,U3,1,A (LSB)
+B,U2,13,QB
+B,U3,2,B
+C,U2,12,QC
+C,U3,3,C (MSB)
+
+; Filas (activas LOW desde el 138)
+ROW0,U3,15,Y0
+ROW1,U3,14,Y1
+ROW2,U3,13,Y2
+ROW3,U3,12,Y3
+ROW4,U3,11,Y4
+ROW5,U3,10,Y5
+ROW6,U3,9,Y6
+ROW7,U3,7,Y7
+
+; Conexiones de columnas con resistencias serie
+Q0,U1,15,Q0 del 74HC595
+Q1,U1,1,Q1
+Q2,U1,2,Q2
+Q3,U1,3,Q3
+Q4,U1,4,Q4
+Q5,U1,5,Q5
+Q6,U1,6,Q6
+Q7,U1,7,Q7
+
+; Cada resistencia entre Qn y COLn
+Q0,RCOL0,1,Lado 595
+COL0,RCOL0,2,Lado columna
+Q1,RCOL1,1,
+COL1,RCOL1,2,
+Q2,RCOL2,1,
+COL2,RCOL2,2,
+Q3,RCOL3,1,
+COL3,RCOL3,2,
+Q4,RCOL4,1,
+COL4,RCOL4,2,
+Q5,RCOL5,1,
+COL5,RCOL5,2,
+Q6,RCOL6,1,
+COL6,RCOL6,2,
+Q7,RCOL7,1,
+COL7,RCOL7,2,
+
+; Columnas y filas hacia la matriz (el pin exacto depende del símbolo de M1)
+COL0,M1,COL0,Columna 0 de la matriz
+COL1,M1,COL1,
+COL2,M1,COL2,
+COL3,M1,COL3,
+COL4,M1,COL4,
+COL5,M1,COL5,
+COL6,M1,COL6,
+COL7,M1,COL7,
+
+ROW0,M1,ROW0,Fila 0 (cátodo común → activa LOW)
+ROW1,M1,ROW1,
+ROW2,M1,ROW2,
+ROW3,M1,ROW3,
+ROW4,M1,ROW4,
+ROW5,M1,ROW5,
+ROW6,M1,ROW6,
+ROW7,M1,ROW7,
